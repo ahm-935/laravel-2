@@ -12,7 +12,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'success' => true,
+            'categories' => Category::orderBy('name', 'asc')->get(),
+        ]);
     }
 
     /**
